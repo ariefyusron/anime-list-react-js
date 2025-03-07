@@ -1,0 +1,7 @@
+services:
+  vite-app:
+    build: .
+    container_name: anime-list
+    ports:
+      - "3214:80"
+    restart: always

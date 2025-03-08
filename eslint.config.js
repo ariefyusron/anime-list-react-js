@@ -33,7 +33,8 @@ export default tseslint.config(
         "semi": true,
         "trailingComma": "none"
       }],
-      "indent": ["error", 2]
+      "indent": ["error", 2],
+      "@typescript-eslint/no-empty-object-type": "off"
     },
   },
 );

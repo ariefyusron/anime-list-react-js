@@ -1,6 +1,9 @@
 import { lazy } from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router";
+import { ThemeProvider } from "styled-components";
+
+import themes from "./themes";
 
 const HomePage = lazy(() => import("./pages/home"));
 const SearchPage = lazy(() => import("./pages/search"));
@@ -11,13 +14,15 @@ const queryClient = new QueryClient();
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/detail" element={<DetailPage />} />
-        </Routes>
-      </BrowserRouter>
+      <ThemeProvider theme={themes}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/detail" element={<DetailPage />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 };

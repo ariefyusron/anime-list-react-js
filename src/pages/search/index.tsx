@@ -1,30 +1,19 @@
+import { InfiniteData } from "@tanstack/react-query";
+
 import { useGetAnimeListSearch } from "../../hooks/useAnime";
+import ContentList from "../../components/content-list";
+import { ResponseGetAnimeList } from "../../types/api-anime";
 
 const Search = () => {
-  const {
-    data,
-    fetchNextPage,
-    isLoading,
-    isFetchingNextPage,
-    handleSearch,
-    valueSearch
-  } = useGetAnimeListSearch();
-
-  console.log("isFetchingNextPage", isFetchingNextPage);
-  console.log("isLoading", isLoading);
-  console.log("data", data);
+  const { data, isFetching: isLoading } = useGetAnimeListSearch();
 
   return (
-    <div>
-      <h1>Search</h1>
-      <input
-        type="text"
-        placeholder="search"
-        value={valueSearch}
-        onChange={(e) => handleSearch(e.target.value)}
+    <>
+      <ContentList
+        isLoading={isLoading}
+        data={{ pages: [data] } as InfiniteData<ResponseGetAnimeList>}
       />
-      <button onClick={() => fetchNextPage()}>Load More</button>
-    </div>
+    </>
   );
 };
 

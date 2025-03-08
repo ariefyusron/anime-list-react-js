@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router";
 
 import apiAnime from "../api/api-anime";
+import storeSearchAnime from "../stores/storeSearchAnime";
 
 const queryKey = {
   getAnimeList: ["getAnimeList"],
@@ -25,12 +26,12 @@ export const useGetAnimeList = () => {
 let timeOutSearchAnime: number | undefined;
 
 export const useGetAnimeListSearch = () => {
-  const [search, setSearch] = useState("");
+  const search = storeSearchAnime((state) => state.search);
+  const setSearch = storeSearchAnime((state) => state.setSearch);
+
   const [searchParams, setSearchParams] = useSearchParams();
 
-  useEffect(() => {
-    setSearch(searchParams.get("q") ?? "");
-  }, []);
+  const value = searchParams.get("q") ?? "";
 
   const handleSearch = (value: string) => {
     clearTimeout(timeOutSearchAnime);
@@ -42,21 +43,20 @@ export const useGetAnimeListSearch = () => {
     }, 1000);
   };
 
-  const query = useInfiniteQuery({
+  useEffect(() => {
+    handleSearch(searchParams.get("q") ?? "");
+  }, []);
+
+  const query = useQuery({
     queryKey: queryKey.getAnimeListSearch(search),
-    queryFn: ({ pageParam }) =>
+    queryFn: () =>
       apiAnime.getAnimeList({
-        page: pageParam as number,
+        page: 1,
         limit: 25,
         q: search
       }),
-    initialPageParam: 1,
-    getNextPageParam: (res) =>
-      res.pagination.has_next_page
-        ? res.pagination.current_page + 1
-        : undefined,
     enabled: !!search
   });
 
-  return { ...query, handleSearch, valueSearch: searchParams.get("q") ?? "" };
+  return { ...query, handleSearch, valueSearch: value };
 };

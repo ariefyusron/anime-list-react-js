@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { ThemeProvider } from "styled-components";
 
 import themes from "./themes";
+import { Container } from "./styles";
 
 const HomePage = lazy(() => import("./pages/home"));
 const SearchPage = lazy(() => import("./pages/search"));
@@ -15,13 +16,15 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={themes}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/detail" element={<DetailPage />} />
-          </Routes>
-        </BrowserRouter>
+        <Container>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="/detail" element={<DetailPage />} />
+            </Routes>
+          </BrowserRouter>
+        </Container>
       </ThemeProvider>
     </QueryClientProvider>
   );

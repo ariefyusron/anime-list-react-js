@@ -3,7 +3,6 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router";
 
 import apiAnime from "../api/api-anime";
-import { ResponseGetAnimeList } from "../types/api-anime";
 
 const queryKey = {
   getAnimeList: ["getAnimeList"],
@@ -11,14 +10,10 @@ const queryKey = {
 };
 
 export const useGetAnimeList = () => {
-  const query = useInfiniteQuery<
-    ResponseGetAnimeList,
-    Error,
-    ResponseGetAnimeList
-  >({
+  const query = useInfiniteQuery({
     queryKey: queryKey.getAnimeList,
     queryFn: ({ pageParam }) =>
-      apiAnime.getAnimeList({ page: pageParam as number, limit: 10 }),
+      apiAnime.getAnimeList({ page: pageParam as number, limit: 25 }),
     initialPageParam: 1,
     getNextPageParam: (res) =>
       res.pagination.has_next_page ? res.pagination.current_page + 1 : undefined
@@ -47,16 +42,12 @@ export const useGetAnimeListSearch = () => {
     }, 1000);
   };
 
-  const query = useInfiniteQuery<
-    ResponseGetAnimeList,
-    Error,
-    ResponseGetAnimeList
-  >({
+  const query = useInfiniteQuery({
     queryKey: queryKey.getAnimeListSearch(search),
     queryFn: ({ pageParam }) =>
       apiAnime.getAnimeList({
         page: pageParam as number,
-        limit: 10,
+        limit: 25,
         q: search
       }),
     initialPageParam: 1,

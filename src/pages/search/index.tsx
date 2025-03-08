@@ -4,15 +4,23 @@ import { useGetAnimeListSearch } from "../../hooks/useAnime";
 import ContentList from "../../components/content-list";
 import { ResponseGetAnimeList } from "../../types/api-anime";
 
+import { Container } from "./styles";
+
 const Search = () => {
-  const { data, isFetching: isLoading } = useGetAnimeListSearch();
+  const { data, isFetching: isLoading, valueSearch } = useGetAnimeListSearch();
 
   return (
     <>
-      <ContentList
-        isLoading={isLoading}
-        data={{ pages: [data] } as InfiniteData<ResponseGetAnimeList>}
-      />
+      {isLoading || (data?.data ?? []).length > 1 ? (
+        <ContentList
+          isLoading={isLoading}
+          data={{ pages: [data] } as InfiniteData<ResponseGetAnimeList>}
+        />
+      ) : (
+        <Container>
+          <div>"{valueSearch}" tidak ditemukan</div>
+        </Container>
+      )}
     </>
   );
 };

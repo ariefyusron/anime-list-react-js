@@ -1,16 +1,11 @@
 import { apiAnime } from ".";
-
-interface ParamsGetAnimeList {
-  page?: number;
-  limit?: number;
-  q?: string;
-}
+import { ParamsGetAnimeList, ResponseGetAnimeList } from "../types/api-anime";
 
 const listApi = {
-  getAnimeList: (params: ParamsGetAnimeList) =>
-    apiAnime.get(
-      `anime?page=${params.page}&limit=${params.limit}&q=${params.q}`
-    )
+  getAnimeList: (params: ParamsGetAnimeList): Promise<ResponseGetAnimeList> => {
+    const queryString = new URLSearchParams(Object.entries(params));
+    return apiAnime.get(`anime?${queryString.toString()}`);
+  }
 };
 
 export default listApi;

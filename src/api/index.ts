@@ -1,5 +1,9 @@
 import axios from "axios";
 
-export const apiAnime = axios.create({
+const apiAnime = axios.create({
   baseURL: import.meta.env.VITE_HOST_BE
 });
+
+apiAnime.interceptors.response.use((res) => res.data);
+
+export { apiAnime };

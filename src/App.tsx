@@ -28,7 +28,7 @@ const App = () => {
                 <Route path="search" element={<SearchPage />} />
               </Route>
 
-              <Route path="detail" element={<DetailPage />} />
+              <Route path="detail/:malId" element={<DetailPage />} />
 
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

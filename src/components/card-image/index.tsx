@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 import { ResponseGetAnimeList } from "../../types/api-anime";
 import { animeType } from "../../constants/enum";
@@ -20,6 +21,7 @@ interface CardImageProps {
 
 const CardImage = ({ data }: CardImageProps) => {
   const [isHover, setIsHover] = useState(false);
+  const navigate = useNavigate();
 
   const getTextDuration = () => {
     const type = data.type.toLocaleLowerCase();
@@ -47,6 +49,9 @@ const CardImage = ({ data }: CardImageProps) => {
     <Container
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
+      onClick={() => {
+        navigate(`/detail/${data.mal_id}`);
+      }}
     >
       <Image src={data.images.webp.image_url} alt="image-anime" />
       <WrapContent>

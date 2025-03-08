@@ -7,7 +7,8 @@ import storeSearchAnime from "../stores/storeSearchAnime";
 
 const queryKey = {
   getAnimeList: ["getAnimeList"],
-  getAnimeListSearch: (q: string) => ["getAnimeListSearch", [q]]
+  getAnimeListSearch: (q: string) => ["getAnimeListSearch", [q]],
+  getAnimeDetail: (malId: string) => ["getAnimeDetail", [malId]]
 };
 
 export const useGetAnimeList = () => {
@@ -59,4 +60,13 @@ export const useGetAnimeListSearch = () => {
   });
 
   return { ...query, handleSearch, valueSearch: value };
+};
+
+export const useGetAnimeDetail = (malId: string) => {
+  const query = useQuery({
+    queryKey: queryKey.getAnimeDetail(malId),
+    queryFn: () => apiAnime.getAnimeDetail(malId)
+  });
+
+  return query;
 };

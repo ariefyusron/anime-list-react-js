@@ -12,6 +12,8 @@ const HomePage = lazy(() => import("./pages/home"));
 const SearchPage = lazy(() => import("./pages/search"));
 const DetailPage = lazy(() => import("./pages/detail"));
 
+const NotFoundPage = lazy(() => import("./pages/not-found"));
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -27,6 +29,8 @@ const App = () => {
               </Route>
 
               <Route path="detail" element={<DetailPage />} />
+
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </BrowserRouter>
         </Container>

@@ -1,0 +1,145 @@
+import { screen, fireEvent } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
+
+import { ResponseGetAnimeList } from "../../types/api-anime";
+import { renderWithTheme } from "../../utils/unit-test-container";
+
+import CardImage from ".";
+
+const data = {
+  mal_id: 1,
+  images: {
+    webp: {
+      image_url: "link.url"
+    }
+  },
+  title: "Title",
+  genres: [
+    {
+      name: "Action"
+    },
+    {
+      name: "Comedy"
+    }
+  ],
+  duration: "10 min",
+  episodes: 10
+} as ResponseGetAnimeList["data"][0];
+
+const mockNavigate = vi.fn();
+
+vi.mock("react-router", () => ({
+  useNavigate: () => mockNavigate
+}));
+
+describe("CardImage Component", () => {
+  it("should render the CardImage component type TV", () => {
+    renderWithTheme(<CardImage data={{ ...data, type: "TV" }} />);
+
+    const imageElement = screen.getByAltText("image-anime");
+    expect(imageElement).toBeInTheDocument();
+    expect(imageElement).toHaveAttribute("src", "link.url");
+
+    const titleElement = screen.getByText("Title");
+    expect(titleElement).toBeInTheDocument();
+
+    const containerElement = screen.getByTestId(
+      "component-card-image-container"
+    );
+    fireEvent.mouseEnter(containerElement);
+    expect(screen.getByText("TV")).toBeInTheDocument();
+    expect(screen.getByText("10 episodes")).toBeInTheDocument();
+    expect(screen.getByText("Action - Comedy")).toBeInTheDocument();
+
+    fireEvent.click(containerElement);
+    expect(mockNavigate).toHaveBeenCalledWith("/detail/1");
+  });
+
+  it("should render the CardImage component type OVA", () => {
+    renderWithTheme(<CardImage data={{ ...data, type: "OVA" }} />);
+
+    const containerElement = screen.getByTestId(
+      "component-card-image-container"
+    );
+    fireEvent.mouseEnter(containerElement);
+    expect(screen.getByText("OVA")).toBeInTheDocument();
+    expect(screen.getByText("10 episodes")).toBeInTheDocument();
+  });
+
+  it("should render the CardImage component type Special", () => {
+    renderWithTheme(<CardImage data={{ ...data, type: "Special" }} />);
+
+    const containerElement = screen.getByTestId(
+      "component-card-image-container"
+    );
+    fireEvent.mouseEnter(containerElement);
+    expect(screen.getByText("Special")).toBeInTheDocument();
+    expect(screen.getByText("10 episodes")).toBeInTheDocument();
+  });
+
+  it("should render the CardImage component type Ona", () => {
+    renderWithTheme(<CardImage data={{ ...data, type: "Ona" }} />);
+
+    const containerElement = screen.getByTestId(
+      "component-card-image-container"
+    );
+    fireEvent.mouseEnter(containerElement);
+    expect(screen.getByText("Ona")).toBeInTheDocument();
+    expect(screen.getByText("10 episodes")).toBeInTheDocument();
+  });
+
+  it("should render the CardImage component type Movie", () => {
+    renderWithTheme(<CardImage data={{ ...data, type: "Movie" }} />);
+
+    const containerElement = screen.getByTestId(
+      "component-card-image-container"
+    );
+    fireEvent.mouseEnter(containerElement);
+    expect(screen.getByText("Movie")).toBeInTheDocument();
+    expect(screen.getByText("10 min")).toBeInTheDocument();
+  });
+
+  it("should render the CardImage component type Music", () => {
+    renderWithTheme(<CardImage data={{ ...data, type: "Music" }} />);
+
+    const containerElement = screen.getByTestId(
+      "component-card-image-container"
+    );
+    fireEvent.mouseEnter(containerElement);
+    expect(screen.getByText("Music")).toBeInTheDocument();
+    expect(screen.getByText("10 min")).toBeInTheDocument();
+  });
+
+  it("should render the CardImage component type CM", () => {
+    renderWithTheme(<CardImage data={{ ...data, type: "CM" }} />);
+
+    const containerElement = screen.getByTestId(
+      "component-card-image-container"
+    );
+    fireEvent.mouseEnter(containerElement);
+    expect(screen.getByText("CM")).toBeInTheDocument();
+    expect(screen.getByText("10 min")).toBeInTheDocument();
+  });
+
+  it("should render the CardImage component type PV", () => {
+    renderWithTheme(<CardImage data={{ ...data, type: "PV" }} />);
+
+    const containerElement = screen.getByTestId(
+      "component-card-image-container"
+    );
+    fireEvent.mouseEnter(containerElement);
+    expect(screen.getByText("PV")).toBeInTheDocument();
+    expect(screen.getByText("10 min")).toBeInTheDocument();
+  });
+
+  it("should render the CardImage component type TV Special", () => {
+    renderWithTheme(<CardImage data={{ ...data, type: "TV Special" }} />);
+
+    const containerElement = screen.getByTestId(
+      "component-card-image-container"
+    );
+    fireEvent.mouseEnter(containerElement);
+    expect(screen.getByText("TV Special")).toBeInTheDocument();
+    expect(screen.getByText("10 min")).toBeInTheDocument();
+  });
+});

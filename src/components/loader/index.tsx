@@ -5,7 +5,7 @@ import { Spinner } from "./styles";
 const Loader = (
   props: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 ) => (
-  <div {...props}>
+  <div data-testid="loader" {...props}>
     <Spinner />
   </div>
 );

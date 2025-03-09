@@ -47,6 +47,7 @@ const CardImage = ({ data }: CardImageProps) => {
 
   return (
     <Container
+      data-testid="component-card-image-container"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       onClick={() => {

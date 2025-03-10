@@ -47,7 +47,7 @@ const Detail = () => {
   return (
     <>
       <Topbar>
-        <ButtonBack onClick={() => navigate(-1)}>back</ButtonBack>
+        <ButtonBack onClick={() => navigate(-1)}>Back</ButtonBack>
         <Title>{isLoading ? "Loading..." : data?.data.title}</Title>
       </Topbar>
 

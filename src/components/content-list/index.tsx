@@ -25,7 +25,11 @@ const ContentList = ({ isLoading, data }: ContentListProps) => (
       <Content>
         {data?.pages?.map((itemPage) =>
           itemPage?.data?.map((item) => (
-            <CardImage key={item?.mal_id} data={item} />
+            <CardImage
+              data-testid={String(item.mal_id)}
+              key={item?.mal_id}
+              data={item}
+            />
           ))
         )}
       </Content>

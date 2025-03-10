@@ -7,7 +7,7 @@ describe("Loader Component", () => {
   it("should render the Loader component", () => {
     render(<Loader />);
 
-    const loaderElement = screen.getByTestId("loader");
+    const loaderElement = screen.getByTestId("component-loader");
 
     expect(loaderElement).toBeInTheDocument();
   });

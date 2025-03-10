@@ -34,7 +34,12 @@ vi.mock("react-router", () => ({
 
 describe("CardImage Component", () => {
   it("should render the CardImage component type TV", () => {
-    renderWithTheme(<CardImage data={{ ...data, type: "TV" }} />);
+    renderWithTheme(
+      <CardImage
+        data-testid="component-card-image-container"
+        data={{ ...data, type: "TV" }}
+      />
+    );
 
     const imageElement = screen.getByAltText("image-anime");
     expect(imageElement).toBeInTheDocument();
@@ -53,10 +58,16 @@ describe("CardImage Component", () => {
 
     fireEvent.click(containerElement);
     expect(mockNavigate).toHaveBeenCalledWith("/detail/1");
+    mockNavigate.mockClear();
   });
 
   it("should render the CardImage component type OVA", () => {
-    renderWithTheme(<CardImage data={{ ...data, type: "OVA" }} />);
+    renderWithTheme(
+      <CardImage
+        data-testid="component-card-image-container"
+        data={{ ...data, type: "OVA" }}
+      />
+    );
 
     const containerElement = screen.getByTestId(
       "component-card-image-container"
@@ -67,7 +78,12 @@ describe("CardImage Component", () => {
   });
 
   it("should render the CardImage component type Special", () => {
-    renderWithTheme(<CardImage data={{ ...data, type: "Special" }} />);
+    renderWithTheme(
+      <CardImage
+        data-testid="component-card-image-container"
+        data={{ ...data, type: "Special" }}
+      />
+    );
 
     const containerElement = screen.getByTestId(
       "component-card-image-container"
@@ -78,7 +94,12 @@ describe("CardImage Component", () => {
   });
 
   it("should render the CardImage component type Ona", () => {
-    renderWithTheme(<CardImage data={{ ...data, type: "Ona" }} />);
+    renderWithTheme(
+      <CardImage
+        data-testid="component-card-image-container"
+        data={{ ...data, type: "Ona" }}
+      />
+    );
 
     const containerElement = screen.getByTestId(
       "component-card-image-container"
@@ -89,7 +110,12 @@ describe("CardImage Component", () => {
   });
 
   it("should render the CardImage component type Movie", () => {
-    renderWithTheme(<CardImage data={{ ...data, type: "Movie" }} />);
+    renderWithTheme(
+      <CardImage
+        data-testid="component-card-image-container"
+        data={{ ...data, type: "Movie" }}
+      />
+    );
 
     const containerElement = screen.getByTestId(
       "component-card-image-container"
@@ -100,7 +126,12 @@ describe("CardImage Component", () => {
   });
 
   it("should render the CardImage component type Music", () => {
-    renderWithTheme(<CardImage data={{ ...data, type: "Music" }} />);
+    renderWithTheme(
+      <CardImage
+        data-testid="component-card-image-container"
+        data={{ ...data, type: "Music" }}
+      />
+    );
 
     const containerElement = screen.getByTestId(
       "component-card-image-container"
@@ -111,7 +142,12 @@ describe("CardImage Component", () => {
   });
 
   it("should render the CardImage component type CM", () => {
-    renderWithTheme(<CardImage data={{ ...data, type: "CM" }} />);
+    renderWithTheme(
+      <CardImage
+        data-testid="component-card-image-container"
+        data={{ ...data, type: "CM" }}
+      />
+    );
 
     const containerElement = screen.getByTestId(
       "component-card-image-container"
@@ -122,7 +158,12 @@ describe("CardImage Component", () => {
   });
 
   it("should render the CardImage component type PV", () => {
-    renderWithTheme(<CardImage data={{ ...data, type: "PV" }} />);
+    renderWithTheme(
+      <CardImage
+        data-testid="component-card-image-container"
+        data={{ ...data, type: "PV" }}
+      />
+    );
 
     const containerElement = screen.getByTestId(
       "component-card-image-container"
@@ -133,7 +174,12 @@ describe("CardImage Component", () => {
   });
 
   it("should render the CardImage component type TV Special", () => {
-    renderWithTheme(<CardImage data={{ ...data, type: "TV Special" }} />);
+    renderWithTheme(
+      <CardImage
+        data-testid="component-card-image-container"
+        data={{ ...data, type: "TV Special" }}
+      />
+    );
 
     const containerElement = screen.getByTestId(
       "component-card-image-container"

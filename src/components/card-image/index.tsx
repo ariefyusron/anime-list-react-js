@@ -17,9 +17,10 @@ import {
 
 interface CardImageProps {
   data: ResponseGetAnimeList["data"][0];
+  "data-testid": string;
 }
 
-const CardImage = ({ data }: CardImageProps) => {
+const CardImage = ({ data, "data-testid": dataTestId }: CardImageProps) => {
   const [isHover, setIsHover] = useState(false);
   const navigate = useNavigate();
 
@@ -47,7 +48,7 @@ const CardImage = ({ data }: CardImageProps) => {
 
   return (
     <Container
-      data-testid="component-card-image-container"
+      data-testid={dataTestId}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       onClick={() => {

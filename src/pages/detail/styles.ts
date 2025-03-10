@@ -34,6 +34,10 @@ export const ButtonBack = styled.div`
 export const Content = styled.div`
   padding: 32px;
   display: flex;
+
+  @media only screen and (max-width: 430px) {
+    flex-direction: column;
+  }
 `;
 
 export const Image = styled.img`

@@ -21,6 +21,11 @@ export const Input = styled.input`
   padding: 8px 16px;
   border-radius: 8px;
   width: 300px;
+
+  @media only screen and (max-width: 430px) {
+    width: unset;
+    flex: 1;
+  }
 `;
 
 export const Button = styled.button`

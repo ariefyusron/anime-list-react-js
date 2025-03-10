@@ -12,7 +12,7 @@
     "prepare": "husky",
     "test": "vitest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.67.2",

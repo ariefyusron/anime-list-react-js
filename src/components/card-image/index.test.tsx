@@ -58,7 +58,6 @@ describe("CardImage Component", () => {
 
     fireEvent.click(containerElement);
     expect(mockNavigate).toHaveBeenCalledWith("/detail/1");
-    mockNavigate.mockClear();
   });
 
   it("should render the CardImage component type OVA", () => {

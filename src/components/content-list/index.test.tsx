@@ -1,5 +1,5 @@
 import { screen, fireEvent, within } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { InfiniteData } from "@tanstack/react-query";
 
 import { ResponseGetAnimeList } from "../../types/api-anime";
@@ -57,13 +57,18 @@ const data = {
 };
 
 const mockNavigate = vi.fn();
-vi.mock("react-router", () => ({
-  useNavigate: () => mockNavigate
-}));
 
 describe("ContentList Component", () => {
+  vi.mock("react-router", () => ({
+    useNavigate: () => mockNavigate
+  }));
+
+  beforeEach(() => {
+    mockNavigate.mockClear();
+  });
+
   it("should render the ContentList component isLoading", () => {
-    renderWithTheme(
+    const component = renderWithTheme(
       <ContentList
         isLoading
         data={data as unknown as InfiniteData<ResponseGetAnimeList>}
@@ -71,9 +76,10 @@ describe("ContentList Component", () => {
     );
 
     expect(screen.getByTestId("component-loader")).toBeInTheDocument();
+    expect(component).toMatchSnapshot();
   });
 
-  it("should render the ContentList component render list data", () => {
+  it("should render the ContentList component render first data", () => {
     renderWithTheme(
       <ContentList
         isLoading={false}
@@ -81,40 +87,62 @@ describe("ContentList Component", () => {
       />
     );
 
-    //item first
-    const cardImageElementFirst = screen.getByTestId("1");
-    const childElementFirst = within(cardImageElementFirst);
-    const imageElementFirst = childElementFirst.getByAltText("image-anime");
-    expect(imageElementFirst).toBeInTheDocument();
-    expect(imageElementFirst).toHaveAttribute("src", "link.url");
+    const cardImageElement = screen.getByTestId("1");
+    const childElement = within(cardImageElement);
+    const imageElement = childElement.getByAltText("image-anime");
+    expect(imageElement).toBeInTheDocument();
+    expect(imageElement).toHaveAttribute("src", "link.url");
 
-    expect(childElementFirst.getByText("Title")).toBeInTheDocument();
+    expect(childElement.getByText("Title")).toBeInTheDocument();
 
-    fireEvent.mouseEnter(cardImageElementFirst);
-    expect(childElementFirst.getByText("TV")).toBeInTheDocument();
-    expect(childElementFirst.getByText("10 episodes")).toBeInTheDocument();
-    expect(childElementFirst.getByText("Action - Comedy")).toBeInTheDocument();
+    expect(cardImageElement).toMatchSnapshot();
 
-    fireEvent.click(cardImageElementFirst);
+    fireEvent.mouseEnter(cardImageElement);
+    expect(childElement.getByText("TV")).toBeInTheDocument();
+    expect(childElement.getByText("10 episodes")).toBeInTheDocument();
+    expect(childElement.getByText("Action - Comedy")).toBeInTheDocument();
+
+    fireEvent.click(cardImageElement);
     expect(mockNavigate).toHaveBeenCalledWith("/detail/1");
-    mockNavigate.mockClear();
+    expect(cardImageElement).toMatchSnapshot();
+  });
 
-    //item secondary
-    const cardImageElementSecond = screen.getByTestId("2");
-    const childElementSecond = within(cardImageElementSecond);
-    const imageElementSecond = childElementSecond.getByAltText("image-anime");
-    expect(imageElementSecond).toBeInTheDocument();
-    expect(imageElementSecond).toHaveAttribute("src", "link2.url");
+  it("should render the ContentList component render second data", () => {
+    renderWithTheme(
+      <ContentList
+        isLoading={false}
+        data={data as unknown as InfiniteData<ResponseGetAnimeList>}
+      />
+    );
 
-    expect(childElementSecond.getByText("Title2")).toBeInTheDocument();
+    const cardImageElement = screen.getByTestId("2");
+    const childElement = within(cardImageElement);
+    const imageElement = childElement.getByAltText("image-anime");
+    expect(imageElement).toBeInTheDocument();
+    expect(imageElement).toHaveAttribute("src", "link2.url");
 
-    fireEvent.mouseEnter(cardImageElementSecond);
-    expect(childElementSecond.getByText("Movie")).toBeInTheDocument();
-    expect(childElementSecond.getByText("11 min")).toBeInTheDocument();
-    expect(childElementSecond.getByText("Horor - Comedy")).toBeInTheDocument();
+    expect(childElement.getByText("Title2")).toBeInTheDocument();
 
-    fireEvent.click(cardImageElementSecond);
+    expect(cardImageElement).toMatchSnapshot();
+
+    fireEvent.mouseEnter(cardImageElement);
+    expect(childElement.getByText("Movie")).toBeInTheDocument();
+    expect(childElement.getByText("11 min")).toBeInTheDocument();
+    expect(childElement.getByText("Horor - Comedy")).toBeInTheDocument();
+
+    fireEvent.click(cardImageElement);
     expect(mockNavigate).toHaveBeenCalledWith("/detail/2");
-    mockNavigate.mockClear();
+    expect(cardImageElement).toMatchSnapshot();
+  });
+
+  it("should render the ContentList component render list data", () => {
+    const component = renderWithTheme(
+      <ContentList
+        isLoading={false}
+        data={data as unknown as InfiniteData<ResponseGetAnimeList>}
+      />
+    );
+
+    expect(component).toMatchSnapshot();
   });
 });

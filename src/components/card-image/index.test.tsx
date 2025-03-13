@@ -1,5 +1,5 @@
 import { screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 
 import { ResponseGetAnimeList } from "../../types/api-anime";
 import { renderWithTheme } from "../../utils/unit-test-container";
@@ -28,13 +28,17 @@ const data = {
 
 const mockNavigate = vi.fn();
 
-vi.mock("react-router", () => ({
-  useNavigate: () => mockNavigate
-}));
-
 describe("CardImage Component", () => {
+  vi.mock("react-router", () => ({
+    useNavigate: () => mockNavigate
+  }));
+
+  beforeEach(() => {
+    mockNavigate.mockClear();
+  });
+
   it("should render the CardImage component type TV", () => {
-    renderWithTheme(
+    const component = renderWithTheme(
       <CardImage
         data-testid="component-card-image-container"
         data={{ ...data, type: "TV" }}
@@ -48,6 +52,8 @@ describe("CardImage Component", () => {
     const titleElement = screen.getByText("Title");
     expect(titleElement).toBeInTheDocument();
 
+    expect(component).toMatchSnapshot();
+
     const containerElement = screen.getByTestId(
       "component-card-image-container"
     );
@@ -55,6 +61,8 @@ describe("CardImage Component", () => {
     expect(screen.getByText("TV")).toBeInTheDocument();
     expect(screen.getByText("10 episodes")).toBeInTheDocument();
     expect(screen.getByText("Action - Comedy")).toBeInTheDocument();
+
+    expect(component).toMatchSnapshot();
 
     fireEvent.click(containerElement);
     expect(mockNavigate).toHaveBeenCalledWith("/detail/1");

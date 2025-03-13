@@ -7,10 +7,11 @@ import Loader from ".";
 
 describe("Loader Component", () => {
   it("should render the Loader component", () => {
-    renderWithTheme(<Loader />);
+    const component = renderWithTheme(<Loader />);
 
     const loaderElement = screen.getByTestId("component-loader");
 
     expect(loaderElement).toBeInTheDocument();
+    expect(component).toMatchSnapshot();
   });
 });

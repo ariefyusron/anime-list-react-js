@@ -61,7 +61,7 @@ describe("Detail Page", () => {
     vi.clearAllMocks();
   });
 
-  it("should render the Detail Page Loading", async () => {
+  it("should render the Detail Page Loading", () => {
     mockAnimeDetail = {
       data,
       isLoading: true
@@ -78,7 +78,7 @@ describe("Detail Page", () => {
     expect(screen.getByTestId("component-loader")).toBeInTheDocument();
   });
 
-  it("should render the Detail Page With Data", async () => {
+  it("should render the Detail Page With Data", () => {
     mockAnimeDetail = {
       data,
       isLoading: false

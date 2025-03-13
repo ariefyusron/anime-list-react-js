@@ -61,17 +61,18 @@ let mockAnimeList = {
 };
 
 const mockNavigate = vi.fn();
-vi.mock("react-router", () => ({
-  useNavigate: () => mockNavigate
-}));
 
 describe("HomePage Component", () => {
+  vi.mock("react-router", () => ({
+    useNavigate: () => mockNavigate
+  }));
+
   beforeEach(() => {
     vi.mock("../../hooks/useAnime", () => ({
       useGetAnimeList: vi.fn(() => mockAnimeList)
     }));
 
-    vi.clearAllMocks();
+    mockNavigate.mockClear();
   });
 
   it("render isLoading Snapshot", () => {

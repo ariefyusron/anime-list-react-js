@@ -36,28 +36,29 @@ const data = {
   }
 };
 
-const mockNavigate = vi.fn();
-vi.mock("react-router", async () => {
-  const actual = await vi.importActual("react-router");
-
-  return {
-    ...actual,
-    useNavigate: vi.fn(() => mockNavigate)
-  };
-});
-
 let mockAnimeDetail = {
   data,
   isLoading: false
 };
 
+const mockNavigate = vi.fn();
+
 describe("Detail Page", () => {
+  vi.mock("react-router", async () => {
+    const actual = await vi.importActual("react-router");
+
+    return {
+      ...actual,
+      useNavigate: vi.fn(() => mockNavigate)
+    };
+  });
+
   beforeEach(() => {
     vi.mock("../../hooks/useAnime", () => ({
       useGetAnimeDetail: vi.fn(() => mockAnimeDetail)
     }));
 
-    vi.clearAllMocks();
+    mockNavigate.mockClear();
   });
 
   it("render the Detail Page Loading Snapshot", () => {

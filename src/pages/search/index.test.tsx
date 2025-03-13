@@ -61,17 +61,18 @@ let mockSearchValue = {
 };
 
 const mockNavigate = vi.fn();
-vi.mock("react-router", () => ({
-  useNavigate: () => mockNavigate
-}));
 
 describe("SearchPage Component", () => {
+  vi.mock("react-router", () => ({
+    useNavigate: () => mockNavigate
+  }));
+
   beforeEach(() => {
     vi.mock("../../hooks/useAnime", () => ({
       useGetAnimeListSearch: vi.fn(() => mockSearchValue)
     }));
 
-    vi.clearAllMocks();
+    mockNavigate.mockClear();
   });
 
   it("render isLoading Snapshot", () => {

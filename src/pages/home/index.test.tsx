@@ -74,6 +74,30 @@ describe("HomePage Component", () => {
     vi.clearAllMocks();
   });
 
+  it("render isLoading Snapshot", () => {
+    mockAnimeList = {
+      isLoading: true,
+      data,
+      hasNextPage: false
+    };
+
+    const component = renderWithTheme(<HomePage />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("render hasNextPage false Snapshot", () => {
+    mockAnimeList = {
+      isLoading: false,
+      data,
+      hasNextPage: false
+    };
+
+    const component = renderWithTheme(<HomePage />);
+
+    expect(component).toMatchSnapshot();
+  });
+
   it("should render the HomePage component isLoading", () => {
     mockAnimeList = {
       isLoading: true,

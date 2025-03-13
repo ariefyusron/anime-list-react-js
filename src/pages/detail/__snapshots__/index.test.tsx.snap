@@ -1,0 +1,523 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Detail Page > render the Detail Page Loading Snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-gjcoXW eXzRsk"
+      >
+        <div
+          class="sc-fLDLck ljLhSS"
+        >
+          Back
+        </div>
+        <h1
+          class="sc-dVBluf gLMRWv"
+        >
+          Loading...
+        </h1>
+      </div>
+      <div
+        data-testid="component-loader"
+        style="display: flex; justify-content: center; margin-top: 100px;"
+      >
+        <div
+          class="sc-FEMpB jtZqmY"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-gjcoXW eXzRsk"
+    >
+      <div
+        class="sc-fLDLck ljLhSS"
+      >
+        Back
+      </div>
+      <h1
+        class="sc-dVBluf gLMRWv"
+      >
+        Loading...
+      </h1>
+    </div>
+    <div
+      data-testid="component-loader"
+      style="display: flex; justify-content: center; margin-top: 100px;"
+    >
+      <div
+        class="sc-FEMpB jtZqmY"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Detail Page > render the Detail Page With Data Snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="sc-gjcoXW eXzRsk"
+      >
+        <div
+          class="sc-fLDLck ljLhSS"
+        >
+          Back
+        </div>
+        <h1
+          class="sc-dVBluf gLMRWv"
+        >
+          Title
+        </h1>
+      </div>
+      <div
+        class="sc-dycHyt kitVOT"
+      >
+        <div
+          class="sc-gNZgCX hhIUKd"
+        >
+          <img
+            alt="image-detail"
+            class="sc-jbAkgO dSjlwp"
+            src="image_url.large"
+          />
+          <div
+            class="sc-kfeOyU JIrGb"
+          />
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 8px; border-bottom: 1px solid #fff;"
+          >
+            Informasi
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Type: Type
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Episodes: 12
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Status: Status
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Aired: Aired
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Broadcast: Broadcast
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Producers: Producers, Producers2
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Licensors: Licensors, Licensors2
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Studios: Studios, Studios2
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Source: Source
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Genres: Genres, Genres2
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Themes: Themes, Themes2
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Demographics: Demographics, Demographics2
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Duration: Duration
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Rating: Rating
+          </div>
+        </div>
+        <div
+          class="sc-gNZgCX hhIUKd"
+          style="flex: 1;"
+        >
+          <div>
+            <div
+              class="sc-kfeOyU JIrGb"
+              style="margin-top: 8px; border-bottom: 1px solid #fff;"
+            >
+              Statistic
+            </div>
+            <div
+              class="sc-kfeOyU JIrGb"
+              style="margin-top: 4px;"
+            >
+              Score: 12
+            </div>
+            <div
+              class="sc-kfeOyU JIrGb"
+              style="margin-top: 4px;"
+            >
+              Ranked: 12
+            </div>
+            <div
+              class="sc-kfeOyU JIrGb"
+              style="margin-top: 4px;"
+            >
+              Popularity: 12
+            </div>
+            <div
+              class="sc-kfeOyU JIrGb"
+              style="margin-top: 4px;"
+            >
+              Members: 12
+            </div>
+            <div
+              class="sc-kfeOyU JIrGb"
+              style="margin-top: 4px;"
+            >
+              Favorites: 12
+            </div>
+          </div>
+          <div>
+            <div
+              class="sc-kfeOyU JIrGb"
+              style="margin-top: 8px; border-bottom: 1px solid #fff; margin-bottom: 4px;"
+            >
+              Synopsis
+            </div>
+            <div
+              class="sc-kfeOyU JIrGb"
+            >
+              ini panjang
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-gjcoXW eXzRsk"
+    >
+      <div
+        class="sc-fLDLck ljLhSS"
+      >
+        Back
+      </div>
+      <h1
+        class="sc-dVBluf gLMRWv"
+      >
+        Title
+      </h1>
+    </div>
+    <div
+      class="sc-dycHyt kitVOT"
+    >
+      <div
+        class="sc-gNZgCX hhIUKd"
+      >
+        <img
+          alt="image-detail"
+          class="sc-jbAkgO dSjlwp"
+          src="image_url.large"
+        />
+        <div
+          class="sc-kfeOyU JIrGb"
+        />
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 8px; border-bottom: 1px solid #fff;"
+        >
+          Informasi
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Type: Type
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Episodes: 12
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Status: Status
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Aired: Aired
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Broadcast: Broadcast
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Producers: Producers, Producers2
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Licensors: Licensors, Licensors2
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Studios: Studios, Studios2
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Source: Source
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Genres: Genres, Genres2
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Themes: Themes, Themes2
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Demographics: Demographics, Demographics2
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Duration: Duration
+        </div>
+        <div
+          class="sc-kfeOyU JIrGb"
+          style="margin-top: 4px;"
+        >
+          Rating: Rating
+        </div>
+      </div>
+      <div
+        class="sc-gNZgCX hhIUKd"
+        style="flex: 1;"
+      >
+        <div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 8px; border-bottom: 1px solid #fff;"
+          >
+            Statistic
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Score: 12
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Ranked: 12
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Popularity: 12
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Members: 12
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 4px;"
+          >
+            Favorites: 12
+          </div>
+        </div>
+        <div>
+          <div
+            class="sc-kfeOyU JIrGb"
+            style="margin-top: 8px; border-bottom: 1px solid #fff; margin-bottom: 4px;"
+          >
+            Synopsis
+          </div>
+          <div
+            class="sc-kfeOyU JIrGb"
+          >
+            ini panjang
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

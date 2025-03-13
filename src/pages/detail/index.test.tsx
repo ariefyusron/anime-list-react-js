@@ -38,8 +38,7 @@ const data = {
 
 const mockNavigate = vi.fn();
 vi.mock("react-router", async () => {
-  const actual =
-    await vi.importActual<typeof import("react-router")>("react-router");
+  const actual = await vi.importActual("react-router");
 
   return {
     ...actual,
@@ -59,6 +58,26 @@ describe("Detail Page", () => {
     }));
 
     vi.clearAllMocks();
+  });
+
+  it("render the Detail Page Loading Snapshot", () => {
+    mockAnimeDetail = {
+      data,
+      isLoading: true
+    };
+    const component = renderWithTheme(<DetailPage />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("render the Detail Page With Data Snapshot", () => {
+    mockAnimeDetail = {
+      data,
+      isLoading: false
+    };
+    const component = renderWithTheme(<DetailPage />);
+
+    expect(component).toMatchSnapshot();
   });
 
   it("should render the Detail Page Loading", () => {

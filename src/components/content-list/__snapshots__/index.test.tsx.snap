@@ -10,7 +10,7 @@ exports[`ContentList Component > should render the ContentList component isLoadi
         style="display: flex; justify-content: center; margin-top: 100px;"
       >
         <div
-          class="sc-FEMpB jBVqWe"
+          class="sc-FEMpB jtZqmY"
         />
       </div>
     </div>
@@ -21,7 +21,7 @@ exports[`ContentList Component > should render the ContentList component isLoadi
       style="display: flex; justify-content: center; margin-top: 100px;"
     >
       <div
-        class="sc-FEMpB jBVqWe"
+        class="sc-FEMpB jtZqmY"
       />
     </div>
   </div>,
@@ -81,7 +81,7 @@ exports[`ContentList Component > should render the ContentList component isLoadi
 
 exports[`ContentList Component > should render the ContentList component render first data 1`] = `
 <div
-  class="sc-gjcoXW cFgGcC"
+  class="sc-gjcoXW jaiddG"
   data-testid="1"
 >
   <img
@@ -103,7 +103,7 @@ exports[`ContentList Component > should render the ContentList component render 
 
 exports[`ContentList Component > should render the ContentList component render first data 2`] = `
 <div
-  class="sc-gjcoXW cFgGcC"
+  class="sc-gjcoXW jaiddG"
   data-testid="1"
 >
   <img
@@ -152,7 +152,7 @@ exports[`ContentList Component > should render the ContentList component render 
         class="sc-jBIHhB eWMKmJ"
       >
         <div
-          class="sc-gjcoXW cFgGcC"
+          class="sc-gjcoXW jaiddG"
           data-testid="1"
         >
           <img
@@ -171,7 +171,7 @@ exports[`ContentList Component > should render the ContentList component render 
           </div>
         </div>
         <div
-          class="sc-gjcoXW cFgGcC"
+          class="sc-gjcoXW jaiddG"
           data-testid="2"
         >
           <img
@@ -197,7 +197,7 @@ exports[`ContentList Component > should render the ContentList component render 
       class="sc-jBIHhB eWMKmJ"
     >
       <div
-        class="sc-gjcoXW cFgGcC"
+        class="sc-gjcoXW jaiddG"
         data-testid="1"
       >
         <img
@@ -216,7 +216,7 @@ exports[`ContentList Component > should render the ContentList component render 
         </div>
       </div>
       <div
-        class="sc-gjcoXW cFgGcC"
+        class="sc-gjcoXW jaiddG"
         data-testid="2"
       >
         <img
@@ -292,7 +292,7 @@ exports[`ContentList Component > should render the ContentList component render 
 
 exports[`ContentList Component > should render the ContentList component render second data 1`] = `
 <div
-  class="sc-gjcoXW cFgGcC"
+  class="sc-gjcoXW jaiddG"
   data-testid="2"
 >
   <img
@@ -314,7 +314,7 @@ exports[`ContentList Component > should render the ContentList component render 
 
 exports[`ContentList Component > should render the ContentList component render second data 2`] = `
 <div
-  class="sc-gjcoXW cFgGcC"
+  class="sc-gjcoXW jaiddG"
   data-testid="2"
 >
   <img

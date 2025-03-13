@@ -2,16 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.color.background};
-  border: 1px solid #000;
+  border: 1px solid ${({ theme }) => theme.color.black["100"]};
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0px 0px 23px 1px rgba(0, 0, 0, 0.54);
-  -webkit-box-shadow: 0px 0px 23px 1px rgba(0, 0, 0, 0.54);
-  -moz-box-shadow: 0px 0px 23px 1px rgba(0, 0, 0, 0.54);
+  box-shadow: 0px 0px 23px 1px ${({ theme }) => theme.color.black["54"]};
+  -webkit-box-shadow: 0px 0px 23px 1px ${({ theme }) => theme.color.black["54"]};
+  -moz-box-shadow: 0px 0px 23px 1px ${({ theme }) => theme.color.black["54"]};
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 20px ${({ theme }) => theme.color.black["50"]};
     z-index: 10;
     transform: scale(1.2) translateY(-20px);
     transition:

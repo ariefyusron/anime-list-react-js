@@ -6,7 +6,7 @@ exports[`CardImage Component > should render the CardImage component type TV 1`]
   "baseElement": <body>
     <div>
       <div
-        class="sc-FEMpB jgTKpk"
+        class="sc-FEMpB djyWXk"
         data-testid="component-card-image-container"
       >
         <img
@@ -28,7 +28,7 @@ exports[`CardImage Component > should render the CardImage component type TV 1`]
   </body>,
   "container": <div>
     <div
-      class="sc-FEMpB jgTKpk"
+      class="sc-FEMpB djyWXk"
       data-testid="component-card-image-container"
     >
       <img
@@ -107,7 +107,7 @@ exports[`CardImage Component > should render the CardImage component type TV 2`]
   "baseElement": <body>
     <div>
       <div
-        class="sc-FEMpB jgTKpk"
+        class="sc-FEMpB djyWXk"
         data-testid="component-card-image-container"
       >
         <img
@@ -149,7 +149,7 @@ exports[`CardImage Component > should render the CardImage component type TV 2`]
   </body>,
   "container": <div>
     <div
-      class="sc-FEMpB jgTKpk"
+      class="sc-FEMpB djyWXk"
       data-testid="component-card-image-container"
     >
       <img

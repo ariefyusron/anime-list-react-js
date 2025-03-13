@@ -74,6 +74,42 @@ describe("SearchPage Component", () => {
     vi.clearAllMocks();
   });
 
+  it("render isLoading Snapshot", () => {
+    mockSearchValue = {
+      isFetching: true,
+      data: null,
+      valueSearch: "test"
+    };
+
+    const component = renderWithTheme(<SearchPage />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("render Not Found Snapshot", () => {
+    mockSearchValue = {
+      isFetching: false,
+      data: null,
+      valueSearch: "test"
+    };
+
+    const component = renderWithTheme(<SearchPage />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("render Data Snapshot", () => {
+    mockSearchValue = {
+      isFetching: false,
+      data: data.pages[0] as unknown as null,
+      valueSearch: "test"
+    };
+
+    const component = renderWithTheme(<SearchPage />);
+
+    expect(component).toMatchSnapshot();
+  });
+
   it("should render the SearchPage component isLoading", () => {
     mockSearchValue = {
       isFetching: true,

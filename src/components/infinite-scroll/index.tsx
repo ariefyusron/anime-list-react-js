@@ -23,7 +23,11 @@ const InfiniteScroll = ({ loadMore }: InfiniteScrollProps) => {
   }, [loadMore]);
 
   return (
-    <div ref={observerRef} style={{ height: 20, background: "transparent" }} />
+    <div
+      ref={observerRef}
+      data-testid="component-infinite-scroll"
+      style={{ height: 20, background: "transparent" }}
+    />
   );
 };
 

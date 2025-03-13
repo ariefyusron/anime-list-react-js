@@ -54,18 +54,40 @@ const data = {
   ]
 };
 
+const fetchNextPageMock = vi.fn();
+
 let mockAnimeList = {
   isLoading: false,
   data,
-  hasNextPage: false
+  hasNextPage: false,
+  fetchNextPage: fetchNextPageMock
 };
 
 const mockNavigate = vi.fn();
+
+interface ObserverInstanceTypeCustom extends IntersectionObserver {
+  trigger: (isIntersecting?: boolean) => void;
+}
+
+let observerInstance: ObserverInstanceTypeCustom;
 
 describe("HomePage Component", () => {
   vi.mock("react-router", () => ({
     useNavigate: () => mockNavigate
   }));
+
+  const mockIntersectionObserver = vi.fn((callback) => {
+    observerInstance = {
+      observe: vi.fn(),
+      unobserve: vi.fn(),
+      disconnect: vi.fn(),
+      trigger: (isIntersecting = true) => {
+        callback([{ isIntersecting }], observerInstance);
+      }
+    } as unknown as ObserverInstanceTypeCustom;
+    return observerInstance;
+  });
+  window.IntersectionObserver = mockIntersectionObserver;
 
   beforeEach(() => {
     vi.mock("../../hooks/useAnime", () => ({
@@ -73,13 +95,16 @@ describe("HomePage Component", () => {
     }));
 
     mockNavigate.mockClear();
+    mockIntersectionObserver.mockClear();
+    fetchNextPageMock.mockClear();
   });
 
   it("render isLoading Snapshot", () => {
     mockAnimeList = {
       isLoading: true,
       data,
-      hasNextPage: false
+      hasNextPage: false,
+      fetchNextPage: fetchNextPageMock
     };
 
     const component = renderWithTheme(<HomePage />);
@@ -91,7 +116,21 @@ describe("HomePage Component", () => {
     mockAnimeList = {
       isLoading: false,
       data,
-      hasNextPage: false
+      hasNextPage: false,
+      fetchNextPage: fetchNextPageMock
+    };
+
+    const component = renderWithTheme(<HomePage />);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it("render hasNextPage true Snapshot", () => {
+    mockAnimeList = {
+      isLoading: false,
+      data,
+      hasNextPage: true,
+      fetchNextPage: fetchNextPageMock
     };
 
     const component = renderWithTheme(<HomePage />);
@@ -103,7 +142,8 @@ describe("HomePage Component", () => {
     mockAnimeList = {
       isLoading: true,
       data,
-      hasNextPage: false
+      hasNextPage: false,
+      fetchNextPage: fetchNextPageMock
     };
 
     renderWithTheme(<HomePage />);
@@ -111,11 +151,12 @@ describe("HomePage Component", () => {
     expect(screen.getByTestId("component-loader")).toBeInTheDocument();
   });
 
-  it("should render the HomePage component hasNextPage", () => {
+  it("should render the HomePage component hasNextPage false", () => {
     mockAnimeList = {
       isLoading: false,
       data,
-      hasNextPage: false
+      hasNextPage: false,
+      fetchNextPage: fetchNextPageMock
     };
 
     renderWithTheme(<HomePage />);
@@ -154,6 +195,28 @@ describe("HomePage Component", () => {
 
     fireEvent.click(cardImageElementSecond);
     expect(mockNavigate).toHaveBeenCalledWith("/detail/2");
-    mockNavigate.mockClear();
+  });
+
+  it("should render the HomePage component hasNextPage true", () => {
+    mockAnimeList = {
+      isLoading: false,
+      data,
+      hasNextPage: true,
+      fetchNextPage: fetchNextPageMock
+    };
+
+    renderWithTheme(<HomePage />);
+
+    const cardImageElementFirst = screen.getByTestId("1");
+    expect(cardImageElementFirst).toBeInTheDocument();
+
+    expect(screen.getByTestId("component-loader")).toBeInTheDocument();
+    expect(screen.getByTestId("component-infinite-scroll")).toBeInTheDocument();
+
+    expect(fetchNextPageMock).not.toHaveBeenCalled();
+
+    observerInstance.trigger(true);
+
+    expect(fetchNextPageMock).toHaveBeenCalledTimes(1);
   });
 });

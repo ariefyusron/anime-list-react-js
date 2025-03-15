@@ -2,7 +2,7 @@ import { useState } from "react";
 import { screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-import { renderWithTheme } from "../../utils/unit-test-container";
+import { renderWithTheme } from "@utils/unit-test-container";
 
 import WrapHomeSearch from ".";
 
@@ -30,7 +30,7 @@ describe("WrapHomeSearch Component", () => {
   beforeEach(() => {
     mockNavigate.mockClear();
 
-    vi.mock("../../hooks/useAnime", () => ({
+    vi.mock("@hooks/useAnime", () => ({
       useGetAnimeListSearch: useGetAnimeListSearchMock
     }));
   });

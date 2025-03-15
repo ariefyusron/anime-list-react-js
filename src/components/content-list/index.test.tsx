@@ -2,8 +2,8 @@ import { screen, fireEvent, within } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { InfiniteData } from "@tanstack/react-query";
 
-import { ResponseGetAnimeList } from "../../types/api-anime";
-import { renderWithTheme } from "../../utils/unit-test-container";
+import { ResponseGetAnimeList } from "@interface-type/api-anime";
+import { renderWithTheme } from "@utils/unit-test-container";
 
 import ContentList from ".";
 

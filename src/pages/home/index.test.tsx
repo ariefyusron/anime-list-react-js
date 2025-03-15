@@ -1,7 +1,7 @@
 import { screen, fireEvent, within } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-import { renderWithTheme } from "../../utils/unit-test-container";
+import { renderWithTheme } from "@utils/unit-test-container";
 
 import HomePage from ".";
 

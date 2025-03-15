@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from "react-router";
 
-import { useGetAnimeListSearch } from "../../hooks/useAnime";
+import { useGetAnimeListSearch } from "@hooks/useAnime";
 
 import { Topbar, Title, Input, Button } from "./styles";
 

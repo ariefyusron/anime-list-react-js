@@ -1,8 +1,8 @@
 import { screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-import { ResponseGetAnimeList } from "../../types/api-anime";
-import { renderWithTheme } from "../../utils/unit-test-container";
+import { ResponseGetAnimeList } from "@interface-type/api-anime";
+import { renderWithTheme } from "@utils/unit-test-container";
 
 import CardImage from ".";
 

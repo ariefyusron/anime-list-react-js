@@ -1,8 +1,8 @@
 import { InfiniteData } from "@tanstack/react-query";
 
-import { useGetAnimeListSearch } from "../../hooks/useAnime";
-import ContentList from "../../components/content-list";
-import { ResponseGetAnimeList } from "../../types/api-anime";
+import { useGetAnimeListSearch } from "@hooks/useAnime";
+import ContentList from "@components/content-list";
+import { ResponseGetAnimeList } from "@interface-type/api-anime";
 
 import { Container } from "./styles";
 

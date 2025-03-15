@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router";
 
-import apiAnime from "../api/api-anime";
-import storeSearchAnime from "../stores/storeSearchAnime";
+import apiAnime from "@api/api-anime";
+import storeSearchAnime from "@stores/storeSearchAnime";
 
 const queryKey = {
   getAnimeList: ["getAnimeList"],
@@ -24,7 +24,7 @@ export const useGetAnimeList = () => {
   return query;
 };
 
-let timeOutSearchAnime: number | undefined;
+let timeOutSearchAnime: NodeJS.Timeout | undefined;
 
 export const useGetAnimeListSearch = () => {
   const search = storeSearchAnime((state) => state.search);

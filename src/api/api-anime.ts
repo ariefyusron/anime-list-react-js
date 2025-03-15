@@ -1,6 +1,10 @@
+import {
+  ParamsGetAnimeList,
+  ResponseGetAnimeList
+} from "@interface-type/api-anime";
+import { ResponseGetAnimeDetail } from "@interface-type/api-anime-detail";
+
 import { apiAnime } from ".";
-import { ParamsGetAnimeList, ResponseGetAnimeList } from "../types/api-anime";
-import { ResponseGetAnimeDetail } from "../types/api-anime-detail";
 
 const listApi = {
   getAnimeList: (params: ParamsGetAnimeList): Promise<ResponseGetAnimeList> => {

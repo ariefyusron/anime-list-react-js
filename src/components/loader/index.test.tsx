@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 
-import { renderWithTheme } from "../../utils/unit-test-container";
+import { renderWithTheme } from "@utils/unit-test-container";
 
 import Loader from ".";
 

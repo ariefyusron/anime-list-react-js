@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-import { ResponseGetAnimeList } from "../../types/api-anime";
-import { animeType } from "../../constants/enum";
+import { ResponseGetAnimeList } from "@interface-type/api-anime";
+import { animeType } from "@constants/enum";
 
 import {
   Container,

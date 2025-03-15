@@ -1,7 +1,7 @@
-import { useGetAnimeList } from "../../hooks/useAnime";
-import InfiniteScroll from "../../components/infinite-scroll";
-import Loader from "../../components/loader";
-import ContentList from "../../components/content-list";
+import { useGetAnimeList } from "@hooks/useAnime";
+import InfiniteScroll from "@components/infinite-scroll";
+import Loader from "@components/loader";
+import ContentList from "@components/content-list";
 
 const Home = () => {
   const { data, fetchNextPage, isLoading, isFetchingNextPage, hasNextPage } =

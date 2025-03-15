@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router";
 
-import { useGetAnimeDetail } from "../../hooks/useAnime";
-import Loader from "../../components/loader";
+import { useGetAnimeDetail } from "@hooks/useAnime";
+import Loader from "@components/loader";
 
 import {
   Topbar,

@@ -1,6 +1,6 @@
 import { vi, describe, it, expect, beforeEach } from "vitest";
 
-import { renderWithTheme } from "../../utils/unit-test-container";
+import { renderWithTheme } from "@utils/unit-test-container";
 
 import InfiniteScroll from ".";
 

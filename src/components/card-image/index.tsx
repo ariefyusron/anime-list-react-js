@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { useNavigate } from "react-router";
 
 import { ResponseGetAnimeList } from "@interface-type/api-anime";
@@ -83,4 +83,4 @@ const CardImage = ({ data, "data-testid": dataTestId }: CardImageProps) => {
   );
 };
 
-export default CardImage;
+export default memo(CardImage);
